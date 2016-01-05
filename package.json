@@ -1,0 +1,11 @@
+{
+  "name": "engine-entrypoint-manager",
+  "version": "1.0.0",
+  "description": "The entrypoint manager for Engine applications.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jillix <contact@jillix.com> (http://jillix.com)",
+  "license": "MIT"
+}
