@@ -7,5 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "jillix <contact@jillix.com> (http://jillix.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "array-unique": "^0.2.1",
+    "err": "^1.1.0"
+  }
 }
