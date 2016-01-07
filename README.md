@@ -47,6 +47,50 @@ entrypoints.add(["example.com", "foo.bar"], (err, entrypoints) => {
 });
 ```
 
+## Documentation
+
+### `EntrypointManager(app)`
+Creates a new instance of the `EntrypointManager`.
+
+#### Params
+- **EngineApp** `app`: The `EngineApp` instance.
+
+### `exists(name, pack, cb)`
+Checks if the entrypoint exists is already added in the `entrypoints` array.
+
+#### Params
+- **String** `name`: The entrypoint value.
+- **Object** `pack`: The `package.json` content.
+- **Function** `cb`: The callback function.
+
+### `list(cb)`
+List the entrypoints.
+
+#### Params
+- **Function** `cb`: The callback function.
+
+### `update(oldName, newName, cb)`
+Updates an entrypoint.
+
+#### Params
+- **String** `oldName`: The old entrypoint value.
+- **String** `newName`: The new entrypoint.
+- **Function** `cb`: The callback function.
+
+### `remove(name, cb)`
+Removes an entrypoint.
+
+#### Params
+- **String** `name`: The entrypoint value.
+- **Function** `cb`: The callback function.
+
+### `create(name, cb)`
+Creates a new entrypoint.
+
+#### Params
+- **String** `name`: The entrypoint value.
+- **Function** `cb`: The callback function.
+
 ## How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
