@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "array-unique": "^0.2.1",
+    "deffy": "^2.2.0",
     "err": "^1.1.0"
   }
 }
