@@ -4,7 +4,7 @@
   "description": "The entrypoint manager for Engine applications.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test"
   },
   "author": "jillix <contact@jillix.com> (http://jillix.com)",
   "license": "MIT",
@@ -16,5 +16,23 @@
   },
   "devDependencies": {
     "tester": "^1.3.0"
-  }
+  },
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jillix/engine-entrypoint-manager.git"
+  },
+  "keywords": [
+    "entrypoint",
+    "manager",
+    "jillix",
+    "engine"
+  ],
+  "bugs": {
+    "url": "https://github.com/jillix/engine-entrypoint-manager/issues"
+  },
+  "homepage": "https://github.com/jillix/engine-entrypoint-manager#readme"
 }
