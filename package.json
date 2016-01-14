@@ -13,7 +13,8 @@
     "deffy": "^2.2.0",
     "err": "^1.1.0",
     "find-value": "^1.0.1",
-    "set-value": "^0.3.2"
+    "set-value": "^0.3.2",
+    "ul": "^5.2.1"
   },
   "devDependencies": {
     "tester": "^1.3.0"

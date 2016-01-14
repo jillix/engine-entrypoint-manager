@@ -9,15 +9,17 @@ tester.describe("working with objects in memeory", test => {
         test.expect(eem.get()).toEqual({
             private: {
                 "example.com": "private"
-            }
+            },
+            public: {}
         });
     });
     test.it("deletes an etntrypoint", () => {
         eem.delete("example.com", "private", true);
         test.expect(eem.get()).toEqual({
             private: {
-                "example.com": "private"
+                "example.com": undefined
             }
+          , public: {}
         });
     });
 });
