@@ -12,6 +12,7 @@
     "array-unique": "^0.2.1",
     "deffy": "^2.2.0",
     "err": "^1.1.0",
+    "find-value": "^1.0.1",
     "set-value": "^0.3.2"
   },
   "devDependencies": {
