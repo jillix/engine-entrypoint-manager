@@ -1,3 +1,7 @@
 {
-    "name": "test-app"
+  "name": "test-app",
+  "entrypoints": {
+    "private": {},
+    "public": {}
+  }
 }

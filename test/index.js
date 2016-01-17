@@ -2,7 +2,7 @@
 
 const tester = require("tester")
     , EntrypointManager = require("..")
-    , engineApp = require("engine-app")
+    , EngineApp = require("engine-app")
     ;
 
 tester.describe("working with objects in memeory", test => {
@@ -49,11 +49,13 @@ tester.describe("working with objects in memeory", test => {
 });
 
 tester.describe("working with package.json files", test => {
-    var em = new EntrypointManager(new EngineApp(`${__dirname}/app`));
-    test.it("sets entrypoints", (cb) => {
-        em.set("example.com", "private", true, function (err) {
+    var em = new EntrypointManager(
+        new EngineApp(`${__dirname}/app`)
+    );
+    test.it("sets entrypoints", cb => {
+        em.set("example.com", "private", true, err => {
             test.expect(err).toBe(null);
-            em.get(function (err, entrypoints) {
+            em.get((err, entrypoints) => {
                 test.expect(err).toBe(null);
                 test.expect(entrypoints).toEqual({
                     private: {
@@ -66,10 +68,10 @@ tester.describe("working with package.json files", test => {
         });
     });
 
-    test.it("set public entrypoints", (cb) => {
-        em.set("example.com", "public_layout", false, function (err) {
+    test.it("set public entrypoints", cb => {
+        em.set("example.com", "public_layout", false, err => {
             test.expect(err).toBe(null);
-            em.get(function (err, entrypoints) {
+            em.get((err, entrypoints) => {
                 test.expect(err).toBe(null);
                 test.expect(entrypoints).toEqual({
                     private: {
@@ -84,9 +86,9 @@ tester.describe("working with package.json files", test => {
         });
     });
 
-    test.it("deletes a private etntrypoint", () => {
-        eem.delete("example.com", true, function (err) {
-            em.get(function (err, entrypoints) {
+    test.it("deletes a private etntrypoint", (cb) => {
+        em.delete("example.com", true, err => {
+            em.get((err, entrypoints) => {
                 test.expect(err).toBe(null);
                 test.expect(entrypoints).toEqual({
                     private: {}
@@ -99,24 +101,9 @@ tester.describe("working with package.json files", test => {
         });
     });
 
-    test.it("deletes a public etntrypoint", () => {
-        eem.delete("example.com", false, function (err) {
-            eem.get(function (err, entrypoints) {
-                test.expect(entrypoints).toEqual({
-                    private: {
-                        "example.com": undefined
-                    }
-                  , public: {
-                        "example.com": undefined
-                    }
-                });
-            });
-        });
-    });
-
-    test.it("deletes a private etntrypoint", () => {
-        eem.delete("example.com", true, function (err) {
-            eem.get(function (err, entrypoints) {
+    test.it("deletes a public etntrypoint", (cb) => {
+        em.delete("example.com", false, err => {
+            em.get((err, entrypoints) => {
                 test.expect(entrypoints).toEqual({
                     private: {}
                   , public: {}
