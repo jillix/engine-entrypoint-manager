@@ -49,46 +49,105 @@ entrypoints.add(["example.com", "foo.bar"], (err, entrypoints) => {
 
 ## Documentation
 
+### `EntrypointManager(obj)`
+EngineEntrypointManager
+This class takes care to modify the entrypoint data in-memory.
+
+#### Params
+- **Object** `obj`: The `entrypoints` object.
+
+### `set(address, instance, isPrivate)`
+Sets the entrypoint.
+
+#### Params
+- **String** `address`: The entrypoint address.
+- **String** `instance`: The entrypoint instance.
+- **Boolean** `isPrivate`: A flag representing if the entrypoint is private or not.
+
+### `delete(address, isPrivate)`
+Deletes the entrypoint.
+
+#### Params
+- **String** `address`: The entrypoint address.
+- **Boolean** `isPrivate`: A flag representing if the entrypoint is private or not.
+
+### `get(address, isPrivate)`
+Gets the entrypoint data.
+
+**Usage**:
+
+Getting the whole `entrypoints` object:
+
+```js
+em.get();
+```
+
+Getting the private entrypoints:
+
+```js
+em.get(true);
+```
+
+Getting a specific private entrypoint:
+
+```js
+em.get("example.com", true);
+```
+
+#### Params
+- **String** `address`: The entrypoint address.
+- **Boolean** `isPrivate`: A flag representing if the entrypoint is private or not.
+
 ### `EntrypointManager(app)`
 Creates a new instance of the `EntrypointManager`.
 
 #### Params
 - **EngineApp** `app`: The `EngineApp` instance.
 
-### `exists(name, pack, cb)`
-Checks if the entrypoint exists is already added in the `entrypoints` array.
-
-#### Params
-- **String** `name`: The entrypoint value.
-- **Object** `pack`: The `package.json` content.
-- **Function** `cb`: The callback function.
-
-### `list(cb)`
-List the entrypoints.
-
-#### Params
-- **Function** `cb`: The callback function.
-
-### `update(oldName, newName, cb)`
-Updates an entrypoint.
-
-#### Params
-- **String** `oldName`: The old entrypoint value.
-- **String** `newName`: The new entrypoint.
-- **Function** `cb`: The callback function.
-
-### `remove(name, cb)`
-Removes an entrypoint.
-
-#### Params
-- **String** `name`: The entrypoint value.
-- **Function** `cb`: The callback function.
-
-### `create(name, cb)`
+### `create(address, instanceName, isPrivate, cb)`
 Creates a new entrypoint.
 
 #### Params
-- **String** `name`: The entrypoint value.
+- **String** `address`: The entrypoint address.
+- **String** `instanceName`: The entrypoint instance.
+- **Boolean** `isPrivate`: A flag representing if the entrypoint is private or not.
+- **Function** `cb`: The callback function.
+
+### `get(address, instanceName, isPrivate, cb)`
+Gets the entrypoint data.
+
+**Usage**:
+
+Getting the whole `entrypoints` object:
+
+```js
+em.get();
+```
+
+Getting the private entrypoints:
+
+```js
+em.get(true);
+```
+
+Getting a specific private entrypoint:
+
+```js
+em.get("example.com", true);
+```
+
+#### Params
+- **String** `address`: The entrypoint address.
+- **String** `instanceName`: The entrypoint instance.
+- **Boolean** `isPrivate`: A flag representing if the entrypoint is private or not.
+- **Function** `cb`: The callback function.
+
+### `delete(address, instanceName, cb)`
+Deletes an entrypoint.
+
+#### Params
+- **String** `address`: The entrypoint address.
+- **String** `instanceName`: The entrypoint instance.
 - **Function** `cb`: The callback function.
 
 ## How to contribute
